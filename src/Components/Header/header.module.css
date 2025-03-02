@@ -39,3 +39,147 @@
   font-weight: bold;
   padding: 5px;
 }
+
+.header_middle {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 1;
+}
+
+
+.header_middle select, .header_middle input {
+  padding: 10px;
+  font-weight: bold;
+  outline: 1px solid white;
+}
+
+.header_middle select {
+  padding: 9px;
+  border: none;
+}
+.header_middle input {
+  border: none;
+  width: 100%;
+  margin-right: -2px;
+  
+}
+
+.header_middle svg {
+  padding: 6px;
+  background: #febd69;
+  color: #1a1a1a;
+}
+
+.header_middle svg:hover {
+  cursor: pointer;
+  background-color: #d49644;
+}
+
+.header_middle:focus-within {
+  border: 2px solid rgb(255, 161, 173)
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;
+  gap: 10px;
+}
+
+.header_right a { 
+  text-decoration: none;
+  color: white
+}
+
+.header_right p {
+  font-size: 13px;
+
+}
+
+.language { 
+  width: 100px;
+  display: flex;
+  padding: 10px;
+}
+
+
+.language select {
+  background-color: #1a1a1a;
+  border: none;
+  color: white;
+}
+
+.language img {
+  width: 25%;
+}
+
+.cart {
+  position: relative;
+}
+
+
+.cart span {
+  position: absolute;
+  font-weight: bold;
+  top: -8px;
+  font-size: 20px;
+  background-color: #1a1a1a;
+  color: orange;
+  left: 12px;
+}
+
+.acc, .ret {
+  margin-right: 20px;
+}
+
+.header_right a:hover,
+.delivery:hover,
+.header_left a:hover,
+.lower_container ul li:hover
+ {
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+.lower_container {
+  color: white;
+  background-color: #232f3e
+}
+
+.lower_container ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap:5px;
+}
+
+.lower_container ul li {
+  padding: 8px;
+}
+.lower_container ul li:first-child {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+@media screen and (max-width: 576px) {
+  .Header_container {
+    display: flex;
+    flex-direction: column !important;
+    height: auto;
+  }
+  .lower_container ul li:not(:first-child) {
+    display: none;
+  }
+
+  .language {
+    display: none;
+  }
+}

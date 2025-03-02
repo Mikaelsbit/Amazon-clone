@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import classes from "./header.module.css";
 import { CiLocationOn } from "react-icons/ci";
+import Lowerheader from "./Lowerheader"
 const Header = () => {
   return (
     <>
@@ -23,17 +24,17 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className="header_middle">
+          <div className={classes.header_middle}>
             {/* search Bar */}
             <select name="" id="">
               <option value="">All</option>
             </select>
             <input type="text" name="" id="" placeholder="search Product" />
-            <FaSearch />
+            <FaSearch size={25} />
           </div>
 
-          <div className="header_right">
-            <div>
+          <div className={classes.header_right}>
+            <a href="" className={classes.language}>
               <img
                 src="https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png"
                 alt=""
@@ -41,29 +42,30 @@ const Header = () => {
               <select name="" id="">
                 <option value="">EN</option>
               </select>
-            </div>
+            </a>
             {/* three components */}
-            <a href="">
-              <p>sign in</p>
+            <a href="" className={classes.acc}>
+              <p>Hello, sign in</p>
               <span>Account & list</span>
             </a>
 
             {/* order */}
-            <a href="">
+            <a href="" className={classes.ret}>
               <p>returns</p>
               <span>& orders</span>
             </a>
 
             {/* cart */}
 
-            <a href="">
+            <a href="" className={classes.cart}>
               {/* icon */}
-              <MdOutlineShoppingCart />
+              <MdOutlineShoppingCart size ={35} />
               <span>0</span>
             </a>
           </div>
         </div>
       </section>
+      < Lowerheader />
     </>
   );
 };
