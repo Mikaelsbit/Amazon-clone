@@ -1,15 +1,9 @@
 import React from 'react'
-import Header from './Components/Header/Header'
-import CarouselEffect from './Components/carousel/Carousel'
-import Category from './Components/category/Category'
-import Product from './Components/Products/Product.jsx'
+import Routing from './Routing'
 const App = () => {
   return (
     <div>
-     <Header />
-     <CarouselEffect />
-     <Category />
-     <Product />
+     <Routing />
     </div>
   )
 }

@@ -4,18 +4,19 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import classes from "./header.module.css";
 import { CiLocationOn } from "react-icons/ci";
 import Lowerheader from "./Lowerheader"
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
       <section>
         <div className={classes.Header_container}>
           <div className={classes.header_left}>
-            <a href="/">
+            <Link to="/">
               <img
                 src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                 alt=""
               />
-            </a>
+            </Link>
             <div className={classes.delivery}>
               <span><CiLocationOn /></span>
               <div>
@@ -34,7 +35,7 @@ const Header = () => {
           </div>
 
           <div className={classes.header_right}>
-            <a href="" className={classes.language}>
+            <Link to="" className={classes.language}>
               <img
                 src="https://www.countryflags.com/wp-content/uploads/united-states-of-america-flag-png-large.png"
                 alt=""
@@ -42,26 +43,26 @@ const Header = () => {
               <select name="" id="">
                 <option value="">EN</option>
               </select>
-            </a>
+            </Link>
             {/* three components */}
-            <a href="" className={classes.acc}>
+            <Link to="/auth" className={classes.acc}>
               <p>Hello, sign in</p>
               <span>Account & list</span>
-            </a>
+            </Link>
 
             {/* order */}
-            <a href="" className={classes.ret}>
+            <Link to="/orders" className={classes.ret}>
               <p>returns</p>
               <span>& orders</span>
-            </a>
+            </Link>
 
             {/* cart */}
 
-            <a href="" className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
               {/* icon */}
               <MdOutlineShoppingCart size ={35} />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
