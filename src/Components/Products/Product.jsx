@@ -17,7 +17,7 @@ function Product() {
     <section className={classes.product_outer}>
       {
         products.map((singleProduct) => (
-          <ProductCard info = {singleProduct} key={singleProduct.id}/>
+          <ProductCard product = {singleProduct} key={singleProduct.id}/>
         ))
       }
     </section>

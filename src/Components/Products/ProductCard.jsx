@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./products.module.css";
 import Rating from "@mui/material/Rating";
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormats";
-function ProductCard({info}) {
-  const {image, title , id, rating, price} = info;
+function ProductCard({product}) {
+  const {image, title , id, rating, price} = product;
   return (
     <div className={classes.product_container}>
       <a href="">
