@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { productUrl } from "../../api/endpoints";
 import ProductCard from "../../Components/Products/ProductCard";
+import Loader from '../../Components/Loader/Loader.jsx'
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -24,7 +25,7 @@ function ProductDetail() {
       {product ? (
         <ProductCard product={product} />
       ) : (
-        <p>Loading product details...</p>
+        <Loader />
       )}
     </LayOut>
   );

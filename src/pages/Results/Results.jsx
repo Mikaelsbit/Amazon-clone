@@ -5,6 +5,7 @@ import axios from "axios";
 import { productUrl } from "../../api/endpoints";
 import ProductCard from "../../Components/Products/ProductCard";
 import classes from "./results.module.css";
+import Loader from "../../Components/Loader/Loader";
 
 function Results() {
   const [ results, setResults ] = useState([]);
@@ -22,7 +23,10 @@ function Results() {
 
   return (
     <LayOut>
-      <section>
+
+      {
+        results ? (
+          <section>
         <h1 style={{ padding: "30px" }}>Results</h1>
         <p style={{ padding: "30px" }}>Category / {categoryName}</p>
         <hr />
@@ -32,6 +36,10 @@ function Results() {
           ))}
         </div>
       </section>
+        ) : (
+          < Loader />
+        )
+      }
     </LayOut>
   );
 }
