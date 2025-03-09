@@ -78,7 +78,7 @@ object-fit: contain;;
 
 
   .product__flexed {
-    height: 50vh;;
+    height: 25vh;
   }
 
   .product__flexed img {
