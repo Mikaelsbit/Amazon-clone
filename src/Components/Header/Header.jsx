@@ -3,15 +3,15 @@ import { FaSearch } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import classes from "./header.module.css";
 import { CiLocationOn } from "react-icons/ci";
-import Lowerheader from "./Lowerheader"
+import Lowerheader from "./Lowerheader";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
+import { auth } from "../../utility/firebase";
 const Header = () => {
-
-  const [{basket} , dispatch] = useContext (DataContext)
-  const totalItem = basket?.reduce((amount,item) => {
-    return item.amount + amount
-  }, 0)
+  const [{ user }, { basket }, dispatch] = useContext(DataContext);
+  const totalItem = basket?.reduce((amount, item) => {
+    return item.amount + amount;
+  }, 0);
   return (
     <section className={classes.fixed}>
       <section>
@@ -24,7 +24,9 @@ const Header = () => {
               />
             </Link>
             <div className={classes.delivery}>
-              <span><CiLocationOn /></span>
+              <span>
+                <CiLocationOn />
+              </span>
               <div>
                 <p>Delivered to</p>
                 <span>Ethiopia</span>
@@ -37,7 +39,7 @@ const Header = () => {
               <option value="">All</option>
             </select>
             <input type="text" name="" id="" placeholder="search Product" />
-            <FaSearch size={25} />
+            <FaSearch size={37} />
           </div>
 
           <div className={classes.header_right}>
@@ -51,9 +53,20 @@ const Header = () => {
               </select>
             </Link>
             {/* three components */}
-            <Link to="/auth" className={classes.acc}>
-              <p>Hello, sign in</p>
-              <span>Account & list</span>
+            <Link to={!user && "/auth"} className={classes.acc}>
+              <div>
+                {user ? (
+                  <>
+                    <p>Hello {user.email?.split("@")[0]}</p>
+                    <span onClick={() => auth.signOut()}>sign out</span>
+                  </>
+                ) : (
+                  <>
+                    <p>Hello, sign in</p>
+                    <span>Account & list</span>s
+                  </>
+                )}
+              </div>
             </Link>
 
             {/* order */}
@@ -66,13 +79,13 @@ const Header = () => {
 
             <Link to="/cart" className={classes.cart}>
               {/* icon */}
-              <MdOutlineShoppingCart size ={35} />
+              <MdOutlineShoppingCart size={35} />
               <span>{totalItem}</span>
             </Link>
           </div>
         </div>
       </section>
-      < Lowerheader />
+      <Lowerheader />
     </section>
   );
 };

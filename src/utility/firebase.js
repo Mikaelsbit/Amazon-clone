@@ -4,9 +4,11 @@ import {getAuth} from 'firebase/auth'
 import 'firebase/compat/firestore'
 import 'firebase/compat/auth'
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCLMs3isUzEdV9EDONao3y9u0ZZWeozFQI",
+  apiKey: API_KEY,
   authDomain: "clone-c612c.firebaseapp.com",
   projectId: "clone-c612c",
   storageBucket: "clone-c612c.firebasestorage.app",
