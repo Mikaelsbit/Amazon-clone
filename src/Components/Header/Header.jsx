@@ -8,10 +8,12 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
 import { auth } from "../../utility/firebase";
 const Header = () => {
-  const [{ user }, { basket }, dispatch] = useContext(DataContext);
+  const [{user, basket }, dispatch] = useContext(DataContext);
+  // const [{basket}] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
+
   return (
     <section className={classes.fixed}>
       <section>
