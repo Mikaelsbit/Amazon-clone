@@ -1,5 +1,6 @@
 {
   "name": "amazon-clone",
+  "homepage": "https://Mikaelsbit.github.io/Amazon-clone/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -17,6 +20,7 @@
     "@stripe/stripe-js": "^6.0.0",
     "axios": "^1.8.3",
     "firebase": "^11.4.0",
+    "gh-pages": "^6.3.0",
     "numeral": "^2.0.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
